@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="ADMINIB-QHH5KAI" name="com.journaldev.spring.dao.test.PersonDAOTest" skipped="0" tests="1" time="0.0" timestamp="2018-06-15T14:50:25">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="lib.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/lib" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="D:\software\eclipse-jee-oxygen\eclipse\plugins\org.eclipse.pde.build_3.9.300.v20170515-0912\templates" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="env.PROMPT" value="$P$G" />
+    <property name="env.PD_SOCKET" value="6874" />
+    <property name="os.name" value="Windows 7" />
+    <property name="env.FP_NO_HOST_CHECK" value="NO" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jre1.8.0_171\lib\resources.jar;C:\Program Files\Java\jre1.8.0_171\lib\rt.jar;C:\Program Files\Java\jre1.8.0_171\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_171\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_171\lib\jce.jar;C:\Program Files\Java\jre1.8.0_171\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_171\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_171\classes" />
+    <property name="env.COMPUTERNAME" value="ADMINIB-QHH5KAI" />
+    <property name="env.CommonProgramW6432" value="C:\Program Files\Common Files" />
+    <property name="env.ALLUSERSPROFILE" value="C:\ProgramData" />
+    <property name="workspace.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840" />
+    <property name="java.runtime.version" value="1.8.0_171-b11" />
+    <property name="ant.file.type.ICP Demo" value="file" />
+    <property name="application.name" value="icpdemo" />
+    <property name="env.HOMEPATH" value="\Users\IBM_ADMIN" />
+    <property name="user.name" value="xueyongj" />
+    <property name="env.SHARED_RESOURCES_DIRECTORY" value="D:\Program Files (x86)\IBM\IMShared" />
+    <property name="build.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/target" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_171\bin" />
+    <property name="ant.project.default-target" value="build.war" />
+    <property name="ant.project.name" value="ICP Demo" />
+    <property name="java.version" value="1.8.0_171" />
+    <property name="env.PROCESSOR_IDENTIFIER" value="Intel64 Family 6 Model 94 Stepping 3, GenuineIntel" />
+    <property name="user.timezone" value="" />
+    <property name="env.TEMP" value="C:\Users\IBM_AD~1\AppData\Local\Temp" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="env.classpath" value=".;D:\Program Files\Java\jdk1.8.0_151\lib\dt.jar;D:\Program Files\Java\jdk1.8.0_151\lib\tools.jar;" />
+    <property name="env.PDBASE" value="C:\Program Files\IBM\Infoprint Select" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jre1.8.0_171\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="env.GIT_LFS_PATH" value="C:\Program Files\Git LFS" />
+    <property name="env.HOMEDRIVE" value="C:" />
+    <property name="sun.jnu.encoding" value="GBK" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="C:\Program Files\Java\jre1.8.0_171" />
+    <property name="dist.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/target/dist" />
+    <property name="env.PSModulePath" value="C:\windows\system32\WindowsPowerShell\v1.0\Modules\" />
+    <property name="env.APPDATA" value="C:\Users\IBM_ADMIN\AppData\Roaming" />
+    <property name="env.PUBLIC" value="C:\Users\Public" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.ComSpec" value="C:\windows\system32\cmd.exe" />
+    <property name="env.OS" value="Windows_NT" />
+    <property name="env.CommonProgramFiles" value="C:\Program Files\Common Files" />
+    <property name="ant.file" value="D:\Fuyao\FYDevOps\workspace\ICPDemo\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="env.ProgramW6432" value="C:\Program Files" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="25.171-b11" />
+    <property name="user.variant" value="" />
+    <property name="env.USERPROFILE" value="C:\Users\IBM_ADMIN" />
+    <property name="web.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/WebContent" />
+    <property name="ant.library.dir" value="D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840\lib" />
+    <property name="ant.file.ICP Demo" value="D:\Fuyao\FYDevOps\workspace\ICPDemo\build.xml" />
+    <property name="env.GOROOT" value="C:\Go\" />
+    <property name="env.JAVA_HOME" value="D:\Program Files\Java\jdk1.8.0_151" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="env.TMP" value="C:\Users\IBM_AD~1\AppData\Local\Temp" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="env.DOCKER_TOOLBOX_INSTALL_PATH" value="C:\Program Files\Docker Toolbox" />
+    <property name="eclipse.pdebuild.scripts" value="D:\software\eclipse-jee-oxygen\eclipse\plugins\org.eclipse.pde.build_3.9.300.v20170515-0912\scripts" />
+    <property name="user.home" value="C:\Users\IBM_ADMIN" />
+    <property name="env.ProgramData" value="C:\ProgramData" />
+    <property name="env.ProgramFiles(x86)" value="C:\Program Files (x86)" />
+    <property name="env.SESSIONNAME" value="Console" />
+    <property name="compile.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/target/classes" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.library.path" value="C:\Program Files\Java\jre1.8.0_171\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Ruby25-x64\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\IBM\Infoprint Select;D:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;D:\Program Files\Cloud Foundry;D:\software\chromedriver_win32;D:\Program Files\IBM\ODM89\jdk\bin;D:\Program Files\IBM\ODM89\shared\tools\ant\bin; D:\Program Files\IBM\ODM89\shared\tools\ant\lib;D:\Program Files\Python\Python36;D:\Program Files\Python\Python36\Scripts;D:\Program Files\PuTTY\;D:\software\apache-maven-3.5.0\bin;C:\Users\IBM_ADMIN\AppData\Roaming\npm;D:\Program Files (x86)\Microsoft VS Code\bin;D:\Program Files\Docker Toolbox;D:\Program Files (x86)\Kubernetes\Minikube;D:\Program Files (x86)\Kubernetes\Kubectl;D:\Program Files (x86)\Kubernetes\kompose;D:\Program Files (x86)\GitExtensions\;D:\Program Files (x86)\Brackets\command;C:\Go\bin;C:\Program Files (x86)\Skype\Phone\;D:\software\terraform;C:\Program Files\Git LFS;C:\Users\IBM_ADMIN\AppData\Roaming\npm;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\Docker Toolbox;D:\software\eclipse-jee-oxygen\eclipse;;." />
+    <property name="env.NUMBER_OF_PROCESSORS" value="8" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="compile.test.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/target/test-classes" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="java.class.path" value="D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\antlr-2.7.7.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\aopalliance-1.0.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\aspectjrt-1.7.4.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\commons-dbcp-1.4.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\commons-pool-1.5.4.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\dom4j-1.6.1.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\hibernate-commons-annotations-4.0.4.Final.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\hibernate-core-4.3.5.Final.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\hibernate-entitymanager-4.3.5.Final.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\hibernate-jpa-2.1-api-1.0.0.Final.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\jandex-1.1.0.Final.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\javassist-3.18.1-GA.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\javax.inject-1.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\jboss-logging-3.1.3.GA.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\jboss-logging-annotations-1.2.0.Beta1.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\jcl-over-slf4j-1.7.5.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\jstl-1.2.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\junit-4.10.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\junit-dep-4.10.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\log4j-1.2.15.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\mysql-connector-java-5.1.34.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\slf4j-api-1.7.5.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\slf4j-log4j12-1.7.5.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-aop-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-beans-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-context-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-core-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-expression-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-jdbc-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-orm-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-tx-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-web-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\spring-webmvc-4.0.3.RELEASE.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\lib\xml-apis-1.0.b2.jar;D:\Fuyao\FYDevOps\workspace\ICPDemo\target\classes;D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant-launcher.jar;D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant.jar;D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant-junit.jar;D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant-junit4.jar" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.journaldev.spring.dao.test.PersonDAOTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Fuyao\FYDevOps\workspace\ICPDemo\target\test-reports\TEST-com.journaldev.spring.dao.test.PersonDAOTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter,D:\Fuyao\FYDevOps\workspace\ICPDemo\target\test-reports\TEST-com.journaldev.spring.dao.test.PersonDAOTest.txt formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Fuyao\FYDevOps\workspace\ICPDemo\target\test-reports\TEST-com.journaldev.spring.dao.test.PersonDAOTest.xml crashfile=D:\Fuyao\FYDevOps\workspace\ICPDemo\junitvmwatcher2380909543934112761.properties propsfile=D:\Fuyao\FYDevOps\workspace\ICPDemo\junit1444437170889314845.properties" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.1 compiled on February 2 2017" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="env.LOGONSERVER" value="\\ADMINIB-QHH5KAI" />
+    <property name="env.windir" value="C:\windows" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="env.PROCESSOR_ARCHITECTURE" value="AMD64" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="env.OneDrive" value="C:\Users\IBM_ADMIN\OneDrive" />
+    <property name="env.ProgramFiles" value="C:\Program Files" />
+    <property name="env.ANT_HOME" value="D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840" />
+    <property name="java.io.tmpdir" value="C:\Users\IBM_AD~1\AppData\Local\Temp\" />
+    <property name="eclipse.pdebuild.home" value="D:\software\eclipse-jee-oxygen\eclipse\plugins\org.eclipse.pde.build_3.9.300.v20170515-0912\." />
+    <property name="env.PROCESSOR_REVISION" value="5e03" />
+    <property name="env.CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="env.SystemRoot" value="C:\windows" />
+    <property name="conf.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/conf" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jre1.8.0_171\lib\ext;C:\windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo" />
+    <property name="env.MAVEN_HOME" value="D:\software\apache-maven-3.5.0" />
+    <property name="env.LOCALAPPDATA" value="C:\Users\IBM_ADMIN\AppData\Local" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="env.PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW" />
+    <property name="env.Path" value="C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Ruby25-x64\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\IBM\Infoprint Select;D:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;D:\Program Files\Cloud Foundry;D:\software\chromedriver_win32;D:\Program Files\IBM\ODM89\jdk\bin;D:\Program Files\IBM\ODM89\shared\tools\ant\bin; D:\Program Files\IBM\ODM89\shared\tools\ant\lib;D:\Program Files\Python\Python36;D:\Program Files\Python\Python36\Scripts;D:\Program Files\PuTTY\;D:\software\apache-maven-3.5.0\bin;C:\Users\IBM_ADMIN\AppData\Roaming\npm;D:\Program Files (x86)\Microsoft VS Code\bin;D:\Program Files\Docker Toolbox;D:\Program Files (x86)\Kubernetes\Minikube;D:\Program Files (x86)\Kubernetes\Kubectl;D:\Program Files (x86)\Kubernetes\kompose;D:\Program Files (x86)\GitExtensions\;D:\Program Files (x86)\Brackets\command;C:\Go\bin;C:\Program Files (x86)\Skype\Phone\;D:\software\terraform;C:\Program Files\Git LFS;C:\Users\IBM_ADMIN\AppData\Roaming\npm;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\Docker Toolbox;D:\software\eclipse-jee-oxygen\eclipse;" />
+    <property name="basedir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo" />
+    <property name="report.tests" value="D:\Fuyao\FYDevOps\workspace\ICPDemo/target/test-classes/../test-reports" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="D:\software\eclipse-jee-oxygen\eclipse\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant.jar" />
+    <property name="env.USERNAME" value="xueyongj" />
+    <property name="env.SystemDrive" value="C:" />
+    <property name="file.encoding" value="GBK" />
+    <property name="env.COMMPath" value="C:\Program Files\Lenovo\Communications Utility" />
+    <property name="env.USERDOMAIN" value="ADMINIB-QHH5KAI" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="junit" />
+    <property name="env.VBOX_MSI_INSTALL_PATH" value="C:\Program Files\Oracle\VirtualBox\" />
+    <property name="env.PROCESSOR_LEVEL" value="6" />
+    <property name="project.dir" value="D:\Fuyao\FYDevOps\workspace\ICPDemo" />
+  </properties>
+  <error message="com.journaldev.spring.dao.test.PersonDAOTest" type="java.lang.ClassNotFoundException">java.lang.ClassNotFoundException: com.journaldev.spring.dao.test.PersonDAOTest
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+</error>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

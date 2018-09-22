@@ -1,0 +1,36 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "fy-jenkins",
+    "namespace": "default"
+    "labels": {
+      "app": "fy-jenkins",
+      "fy-jenkins": "fy-jenkins"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "8080",
+        "protocol": "TCP",
+        "port": 8080,
+        "targetPort": 8080,
+        "nodePort": 32154
+      },
+      {
+        "name": "50000",
+        "protocol": "TCP",
+        "port": 50000,
+        "targetPort": 50000,
+        "nodePort": 32762
+      }
+    ],
+    "selector": {
+      "app": "fy-jenkins"
+    },
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  }
+}

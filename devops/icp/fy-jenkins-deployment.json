@@ -1,0 +1,146 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "fy-jenkins",
+    "namespace": "default"
+    "labels": {
+      "fy-jenkins": "fy-jenkins"
+    },
+    "annotations": {
+      "deployment.kubernetes.io/revision": "5"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "fy-jenkins"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "fy-jenkins",
+          "fy-jenkins": "fy-jenkins"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "docker-sock-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "docker-sock-pvc"
+            }
+          },
+          {
+            "name": "docker-ro-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "docker-ro-pvc"
+            }
+          },
+          {
+            "name": "libpthread-so-0-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "libpthread-so-0-pvc"
+            }
+          },
+          {
+            "name": "libltdl-so-7-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "libltdl-so-7-pvc"
+            }
+          },
+          {
+            "name": "libc-so-6-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "libc-so-6-pvc"
+            }
+          },
+          {
+            "name": "ld-linux-x86-64-so-2-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "ld-linux-x86-64-so-2-pvc"
+            }
+          },
+          {
+            "name": "libdl-so-2-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "libdl-so-2-pvc"
+            }
+          },
+          {
+            "name": "jenkins-home-pvc",
+            "persistentVolumeClaim": {
+              "claimName": "jenkins-home-pvc"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "fy-jenkins",
+            "image": "mycluster.icp:8500/default/fy-jenkins:latest",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "volumeMounts": [
+              {
+                "name": "docker-sock-pvc",
+                "mountPath": "/var/run/docker.sock"
+              },
+              {
+                "name": "docker-ro-pvc",
+                "mountPath": "/usr/bin/docker"
+              },
+              {
+                "name": "libpthread-so-0-pvc",
+                "mountPath": "/lib/x86_64-linux-gnu/libpthread.so.0"
+              },
+              {
+                "name": "libltdl-so-7-pvc",
+                "mountPath": "/usr/lib/x86_64-linux-gnu/libltdl.so.7"
+              },
+              {
+                "name": "libc-so-6-pvc",
+                "mountPath": "/lib/x86_64-linux-gnu/libc.so.6"
+              },
+              {
+                "name": "ld-linux-x86-64-so-2-pvc",
+                "mountPath": "/lib64/ld-linux-x86-64.so.2"
+              },
+              {
+                "name": "libdl-so-2-pvc",
+                "mountPath": "/lib/x86_64-linux-gnu/libdl.so.2"
+              },
+              {
+                "name": "jenkins-home-pvc",
+                "mountPath": "/var/jenkins_home"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "securityContext": {},
+        "schedulerName": "default-scheduler"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": "25%",
+        "maxSurge": "25%"
+      }
+    },
+    "revisionHistoryLimit": 10,
+    "progressDeadlineSeconds": 600
+  }
+}

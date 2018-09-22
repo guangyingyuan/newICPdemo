@@ -1,0 +1,59 @@
+node{
+   stage('Preparation') {
+      echo 'Preparing...'
+	  checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'fy-svn-icp', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'svn://10.112.5.167/ICP/FyDevOps']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
+   }
+   stage('Build Demo WAR') {
+
+	 echo 'Preparing...'
+	withAnt(installation: 'ant1.10.3') {
+          sh '''cd workspace/ICPDemo
+          ant build.war
+          '''
+     }
+    }
+    stage('Build Docker') {
+     echo 'Building Docker Image...'
+     sh '''pwd
+	 cd workspace/ICPDemo
+     cd target/dist
+ 
+     cp -f icpdemo.war ../../../../devops/app/demo.war
+
+	 cd ../../../../devops/app
+     docker build -t icpdemo:${BUILD_NUMBER} .
+     docker images
+     docker tag icpdemo:${BUILD_NUMBER}  mycluster.icp:8500/default/icpdemo:${BUILD_NUMBER}
+     docker login mycluster.icp:8500  -u admin -p admin
+     docker push mycluster.icp:8500/default/icpdemo:${BUILD_NUMBER}
+     '''
+    }
+     stage('Application Deployment') {
+        echo 'Installing kubectl docker image...'
+        sh  '''export PATH=$PATH:/usr/local/bin/kubectl
+		ln -fs /bin/bash /bin/sh
+		if [ $(curl -sL -w "%{http_code}\\n" "http://10.116.8.15:31910/demo/persons" --connect-timeout 300 --max-time 302 -o /dev/null) == "200" ] 
+        then 
+		    echo "website is available..."
+		    kubectl set image deployment/testweb testweb=mycluster.icp:8500/default/icpdemo:${BUILD_NUMBER}
+            kubectl rollout status deployments/testweb
+		else
+		    echo "website is not available..."
+		    pwd
+		    cd devops/icp
+            kubectl replace -f testweb-deployment.yaml --force
+            kubectl replace -f testweb-service.yaml --force
+        fi
+         kubectl get deployments
+		
+		sleep 10s
+		if [ $(curl -sL -w "%{http_code}\\n" "http://10.116.8.15:31910/demo/persons" --connect-timeout 300 --max-time 302 -o /dev/null) == "200" ] 
+        then 
+		    echo "Remove images..."
+			docker rmi -f $(docker images mycluster.icp:8500/default/icpdemo --filter "before=mycluster.icp:8500/default/icpdemo:${BUILD_NUMBER}" --format="{{.ID}}")
+		else
+		    echo "website is not available..."
+        fi
+	    '''
+   }
+}

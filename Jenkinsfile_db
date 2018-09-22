@@ -1,0 +1,27 @@
+node{
+   stage('Preparation') {
+      echo 'Preparing...'
+	  checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'fy-svn-icp', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'svn://10.112.5.167/ICP/FyDevOps']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
+   }
+    stage('Build MySQl Docker') {
+     echo 'Building Docker Image...'
+     sh '''pwd
+     cd  devops/mysql
+     docker build -t fy-devops-mysql:v5.5 .
+     
+     docker images
+     docker tag fy-devops-mysql:v5.5 mycluster.icp:8500/default/fy-devops-mysql:v5.5
+     docker login mycluster.icp:8500  -u admin -p admin
+     docker push mycluster.icp:8500/default/fy-devops-mysql:v5.5
+     '''
+    }
+     stage('MySQL Deployment') {
+        echo 'Installing kubectl docker image...'
+        sh  '''export PATH=$PATH:/usr/local/bin/kubectl
+		cd devops/icp
+		kubectl replace -f mysql-deployment.yaml --force
+		kubectl replace -f mysql-service.yaml --force
+         kubectl get deployments
+	    '''
+   }
+}

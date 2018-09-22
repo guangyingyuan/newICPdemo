@@ -1,0 +1,72 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "fy-devops-mysql",
+    "namespace": "default",
+    "resourceVersion": "7467150",
+    "labels": {
+      "app": "fy-devops-mysql"
+    },
+    "annotations": {
+      "deployment.kubernetes.io/revision": "2"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "fy-devops-mysql"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "fy-devops-mysql"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fy-devops-mysql",
+            "image": "mycluster.icp:8500/default/fy-devops-mysql:v5.5",
+            "ports": [
+              {
+                "containerPort": 3306,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "MYSQL_ROOT_PASSWORD",
+                "value": "123456"
+              },
+              {
+                "name": "MYSQL_DATABASE",
+                "value": "persondb"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "securityContext": {},
+        "schedulerName": "default-scheduler"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": "25%",
+        "maxSurge": "25%"
+      }
+    },
+    "revisionHistoryLimit": 10,
+    "progressDeadlineSeconds": 600
+  }
+}
