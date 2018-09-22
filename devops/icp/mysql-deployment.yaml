@@ -29,7 +29,7 @@
         "containers": [
           {
             "name": "fy-devops-mysql",
-            "image": "mycluster.icp:8500/default/fy-devops-mysql:v5.5",
+            "image": "mycluster.icp:8500/default/mysql:latest",
             "ports": [
               {
                 "containerPort": 3306,
