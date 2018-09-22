@@ -1,7 +1,7 @@
 node{
    stage('Preparation') {
       echo 'Preparing...'
-	  git credentialsId: 'mygit-icp', url: 'https://github.com/ouxwind/newICPdemo.git'
+	  git credentialsId: 'ouxiang-ssh', url: 'git@github.com:ouxwind/newICPdemo.git'
    }
    stage('Build Demo WAR') {
 
