@@ -32,7 +32,7 @@ node{
         echo 'Installing kubectl docker image...'
         sh  '''export PATH=$PATH:/usr/local/bin/kubectl
 		ln -fs /bin/bash /bin/sh
-		if [ $(curl -sL -w "%{http_code}\\n" "http://10.116.8.15:31910/demo/persons" --connect-timeout 300 --max-time 302 -o /dev/null) == "200" ] 
+		if [ $(curl -sL -w "%{http_code}\\n" "http://192.168.18.201:31910" --connect-timeout 300 --max-time 302 -o /dev/null) == "200" ] 
         then 
 		    echo "website is available..."
 		    kubectl set image deployment/testweb testweb=mycluster.icp:8500/default/icpdemo:${BUILD_NUMBER}
@@ -47,7 +47,7 @@ node{
          kubectl get deployments
 		
 		sleep 10s
-		if [ $(curl -sL -w "%{http_code}\\n" "http://10.116.8.15:31910/demo/persons" --connect-timeout 300 --max-time 302 -o /dev/null) == "200" ] 
+		if [ $(curl -sL -w "%{http_code}\\n" "http://192.168.18.201:31910" --connect-timeout 300 --max-time 302 -o /dev/null) == "200" ] 
         then 
 		    echo "Remove images..."
 			docker rmi -f $(docker images mycluster.icp:8500/default/icpdemo --filter "before=mycluster.icp:8500/default/icpdemo:${BUILD_NUMBER}" --format="{{.ID}}")
