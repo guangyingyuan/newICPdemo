@@ -1,7 +1,7 @@
 node{
    stage('Preparation') {
       echo 'Preparing...'
-	  checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'fy-svn-icp', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'svn://10.112.5.167/ICP/FyDevOps']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
+	  git credentialsId: 'mygit-icp', url: 'https://github.com/ouxwind/newICPdemo.git'
    }
    stage('Build Demo WAR') {
 
